@@ -6,10 +6,10 @@ const formatTimerDigit = (digit: number) => {
 };
 
 const Countdown = () => {
-  const [daysText, setDaysText] = useState("");
-  const [hoursText, setHoursText] = useState("");
-  const [minutesText, setMinutesText] = useState("");
-  const [secondsText, setSecondsText] = useState("");
+  const [daysText, setDaysText] = useState("00");
+  const [hoursText, setHoursText] = useState("00");
+  const [minutesText, setMinutesText] = useState("00");
+  const [secondsText, setSecondsText] = useState("00");
 
   useEffect(() => {
     const timer = () => {
