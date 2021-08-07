@@ -6,14 +6,14 @@ const formatTimerDigit = (digit: number) => {
 };
 
 const Countdown = () => {
-  const newYear = new Date().getFullYear() + 1 + "";
   const [daysText, setDaysText] = useState("");
   const [hoursText, setHoursText] = useState("");
   const [minutesText, setMinutesText] = useState("");
   const [secondsText, setSecondsText] = useState("");
 
   useEffect(() => {
-    const timer = (newYear: string) => {
+    const timer = () => {
+      const newYear = new Date().getFullYear() + 1 + "";
       const eventTime = new Date(`01-01-${newYear}`).getTime();
       const currentTime = new Date().getTime();
       const diffTime = eventTime - currentTime;
@@ -40,8 +40,8 @@ const Countdown = () => {
         }, interval);
       }
     };
-    timer(newYear);
-  }, [newYear]);
+    timer();
+  }, []);
   return (
     <div className="timer-container">
       <p>
