@@ -12,9 +12,9 @@ const Countdown = () => {
   const [secondsText, setSecondsText] = useState("00");
 
   useEffect(() => {
-    const timer = () => {
-      const newYear = new Date().getFullYear() + 1 + "";
-      const eventTime = new Date(`01-01-${newYear}`).getTime();
+    const newYear = new Date().getFullYear() + 1 + "";
+    const timer = (newYear: string) => {
+      const eventTime = new Date(`01 Jan, ${newYear}`).getTime();
       const currentTime = new Date().getTime();
       const diffTime = eventTime - currentTime;
       let duration = diffTime;
@@ -40,7 +40,7 @@ const Countdown = () => {
         }, interval);
       }
     };
-    timer();
+    timer(newYear);
   }, []);
   return (
     <div className="timer-container">
